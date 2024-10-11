@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  assignment_title: MyString
+  due_date: MyString
+  assignment_topic: MyString
+  related_links: MyString
+  assignment_description: MyString
+
+two:
+  assignment_title: MyString
+  due_date: MyString
+  assignment_topic: MyString
+  related_links: MyString
+  assignment_description: MyString

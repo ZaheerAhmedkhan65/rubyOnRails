@@ -1,0 +1,71 @@
+<div class="container">
+<div class= "col-lg-12">
+<div class="card my-5 rounded-0">
+  <div class="card-body">
+    <h2 class="card-title text-center">Contact Us</h2>
+  </div>
+</div>
+   <div class="my-5">
+<p class="lead">
+We would love to hear from you! Whether you have a question about our <strong>web development courses</strong>, want to discuss a project with us, or simply want to connect with us, feel free to reach out.
+</p>
+
+<p class="lead">
+Please fill out the form below, and we’ll get back to you as soon as possible.
+</p>
+<div class="my-3">
+<%= form_with model: @contactform, url: contactform_path, method: :post, local: true do |form| %>
+
+        <div class="row">               
+           <div class="col-lg-6">
+               <div class="form-group">
+                   <%= form.label :user_name,class:"mb-2" %>
+                   <%= form.text_field :user_name , class:"form-control rounded-0 form-control-lg"%>
+               </div>
+           </div>
+           <div class="col-lg-6">
+               <div class="form-group">
+                   <%= form.label :user_email ,class:"mb-2" %>
+                   <%= form.email_field :user_email , class:"form-control rounded-0 form-control-lg"%>
+               </div>
+           </div>
+        </div>
+        <div class="row">
+           <div class="col-lg-12">
+               <div class="form-group">
+                   <%= form.label :user_message , class:"mb-2" %>
+                   <%= form.text_field :user_message, class:"form-control rounded-0 form-control-lg"%>
+               </div>
+           </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+        <%= form.submit "send message" , class:"btn btn-warning my-3 rounded-0"%>
+       <%= link_to 'Back To Contact Us', contactform_path ,class: "btn btn-outline-warning my-3 rounded-0"%>
+            </div>
+        </div>
+<% end %>
+</div>
+
+<h3>Other Ways to Reach Us</h3>
+
+<p class="lead">
+    If you’d prefer to contact us directly, you can also reach us at:
+</p>
+
+<ul class="lead">
+<li><strong>Email</strong>: support@infinitidev.com</li>
+<li><strong>Phone</strong>: +123-456-7890</li>
+</ul>
+
+<p class="lead">
+Follow us on social media to stay updated with our latest courses and projects:
+</p>
+
+<ul class="lead">
+<li><strong>Twitter</strong>: <a href="https://twitter.com/infinitidev">@infinitidev</a></li>
+<li><strong>LinkedIn</strong>: <a href="https://linkedin.com/company/infinitidev">Infinitidev</a></li>
+</ul>
+</div>
+</div>
+</div>

@@ -1,0 +1,42 @@
+<div class="container">
+<div class="card my-5 rounded-0">
+  <div class="card-body">
+    <h2 class="card-title text-center">Assignments</h2>
+  </div>
+</div>
+<div class="my-5">
+<%= link_to 'Add New Assignment', new_assignment_path ,class: "btn btn-warning my-3 rounded-0"%>
+<div class = "table-responsive">
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Due Date</th>
+            <th>Week</th>
+            <th>Topic</th>
+            <th>Related Link</th>
+            <th>Description</th>
+            <th>Actions</th>    
+        </tr>
+    </thead>
+    <tbody>
+        <% @assignments.each do |assignment| %>
+            <tr>
+                <td><%= assignment.assignment_title %></td>
+                <td><%= assignment.due_date %></td>
+                <td><%= assignment.assignment_week %></td>
+                <td><%= assignment.assignment_topic %></td>
+                <td><%= link_to 'Visit Example' , assignment.related_links %></td>
+                <td><%= assignment.assignment_description %></td>
+                <td class="d-flex align-center justify-content-between">
+                <%= link_to 'Edit' , edit_assignment_path(assignment) , class:"btn btn-primary" %> 
+                <%= link_to 'View' , assignment_path(assignment) , class:"btn btn-info" %>
+                <%= button_to 'Delete', assignment_path(assignment), method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+</div>
+</div>  
+</div>

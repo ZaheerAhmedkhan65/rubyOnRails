@@ -1,0 +1,51 @@
+<div class="container">
+<div class = "col-lg-12">
+    <div class="card my-5 rounded-0">
+        <div class="card-body">
+            <h2 class="card-title text-center mb-4">Student Details</h2>   
+    <div class="row">
+      <div class="col-lg-6">
+         <h3 class="mb-3">Personal Information</h3>
+         <p class="lead">
+         <strong> First Name : </strong>
+         <%= @student.first_name %>
+         </p>
+         <p class="lead">
+         <strong> Last Name : </strong>
+         <%= @student.last_name %>
+         </p>
+         <p class="lead">
+         <strong> Full Name : </strong>
+         <%= @student.name %>
+         </p>
+         <p class="lead">
+         <strong> Phone : </strong>
+         <%= @student.phone_number %>
+         </p>
+         <p class="lead">
+         <strong> Personal Email : </strong>
+         <%= @student.personal_email %>
+         </p>
+         
+      </div>
+      
+      <div class="col-lg-6">
+         <h3 class="mb-3">Academic Information</h3>
+         <p class="lead">
+         <strong> Repository Link : </strong>
+         <%= link_to 'Repository' , @student.repository_link %>
+         </p>
+         <p class="lead">
+         <strong> Page Link : </strong>
+         <%= link_to 'Page' , @student.page_link %>
+         </p>
+      </div>
+    
+    </div>
+
+    <%= link_to 'Edit Student', edit_student_path(@student), class: "btn btn-warning  rounded-0 btn-lg" %>
+    <%= link_to 'Back to Students', students_path, class: "btn btn-outline-warning rounded-0 btn-lg" %>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,39 @@
+<div class="container">
+<div class="card my-5 rounded-0">
+  <div class="card-body">
+    <h2 class="card-title text-center">Students</h2>
+  </div>
+</div>
+<div class="my-5">
+<%= link_to 'Add New Student', new_student_path ,class: "btn btn-warning my-3 rounded-0"%>
+
+<div class = "table-responsive">
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Repository Link</th>
+            <th>Page Link</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @students.each do |student| %>
+            <tr>
+                <td><%= student.name %></td>
+                <td><%= student.personal_email %></td>
+                <td><%= link_to 'Repository' , student.repository_link %></td>
+                <td><%= link_to 'Page' , student.page_link %></td>
+                <td class="d-flex align-center justify-content-between">
+                <%= link_to 'Edit' , edit_student_path(student) , class:"btn btn-primary" %> 
+                <%= link_to 'View' ,student_path(student) , class:"btn btn-info" %>
+                <%= button_to 'Delete', student_path(student), method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+</div>
+</div>
+</div>

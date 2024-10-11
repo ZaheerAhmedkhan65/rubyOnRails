@@ -1,0 +1,28 @@
+<div class="container">
+<div class="card my-5 rounded-0">
+  <div class="card-body">
+    <h2 class="card-title text-center">Contact Mails</h2>
+  </div>
+</div>
+<%= link_to 'Add New Contact', new_path ,class: "btn btn-warning my-3 rounded-0"%>
+<div class = "table-responsive">
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>User Name</th>
+            <th>Email</th>
+            <th>Message</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @contactforms.each do |contact| %>
+            <tr>
+                <td><%= contact.user_name %></td>
+                <td><%= contact.user_email %></td>
+                <td><%= contact.user_message %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+</div>
+</div>
