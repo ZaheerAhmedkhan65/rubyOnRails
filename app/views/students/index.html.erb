@@ -4,6 +4,12 @@
     <h2 class="card-title text-center">Students</h2>
   </div>
 </div>
+<% if flash[:notice] %>
+  <div class="alert alert-success my-3 rounded-0">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
 <div class="my-5">
 <%= link_to 'Add New Student', new_student_path ,class: "btn btn-warning my-3 rounded-0"%>
 
